@@ -60,14 +60,14 @@ function getLocation(href) {
     }
 }
 if(document.referrer != "" ) { 
-                var links = document.getElementsByClassName("returnlink");
+                console.log("found referrer: "+document.referrer)var links = document.getElementsByClassName("returnlink");
                 for(var i=0; i<links.length; i++)
                 {
                     //console.log(links[i].innerHTML);
                     //console.log(links[i].href);
                     links[i].innerHTML="← Return to "+document.referrer;
                     var parsedURL=getLocation(document.referrer);
-                    console.log("setting returnlinks to"+parsedURL.protocol+'://'+parsedURL.host );links[i].href=parsedURL.protocol+'://'+parsedURL.host ;
+                    console.log("setting returnlinks to "+parsedURL.protocol+'//'+parsedURL.host );links[i].href=parsedURL.protocol+'//'+parsedURL.host ;
                 }
                 
 }
