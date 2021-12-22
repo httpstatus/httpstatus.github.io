@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>599 Network Connect Timeout Error &mdash; httpstatus.github.io</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="description" content="HTTP Status Code 599: This status code is not specified in any RFCs, but is used by some HTTP proxies to signal a network connect timeout behind the proxy to a client in front of the proxy.">
+  </head>
+  <body>
+    <div class="banner">
+      <div class="container">
+        <div class="row">
+          <div class="twelve columns">
+            <p><a class="returnlink" href="/">&larr; Return to httpstatus.github.io</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <article class="code container">
+      <h2>5&times;&times; Server Error</h2>
+      <h1><span>599</span> Network Connect Timeout Error</h1><p>This status code is not specified in any RFCs, but is used by some HTTP proxies to signal a network connect timeout behind the proxy to a client in front of the proxy.</p>
+<hr>
+<ul>
+<li>Source: <a href="https://github.com/citricsquid/httpstatuses/issues/22">unknown?</a></li>
+</ul>
+<a class="returnlink" href="/">&larr; Return to httpstatus.github.io</a>
+    </article>
+
+
+
+<hr><center><div width=222px height=333px ><h3>by the foundation</h3>
+<a href="https://the-foundation.gitlab.io/"><div><img src="https://hcxi2.2ix.ch/gitlab/the-foundation/docker-cache-nuster/README.md/logo.jpg" width="480" height="270"/></div></a>
+<div></center>
+  </body> <script type="application/javascript" >
+function getLocation(href) {
+    var match = href.match(/^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);
+    return match && {
+        href: href,
+        protocol: match[1],
+        host: match[2],
+        hostname: match[3],
+        port: match[4],
+        pathname: match[5],
+        search: match[6],
+        hash: match[7]
+    }
+}
+if(document.referrer != "" ) { 
+                var links = document.getElementsByClassName("returnlink");
+                for(var i=0; i<links.length; i++)
+                {
+                    //console.log(links[i].innerHTML);
+                    //console.log(links[i].href);
+                    links[i].innerHTML="← Return to "+document.referrer;
+                    var parsedURL=getLocation(document.referrer);
+                    links[i].href=parsedURL.protocol+'://'+parsedURL.protocol ;
+                }
+                
+}
+</script>
+</html>
