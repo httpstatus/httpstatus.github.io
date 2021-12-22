@@ -59,7 +59,7 @@ if(document.referrer != "" ) {
                     //console.log(links[i].href);
                     links[i].innerHTML="← Return to "+document.referrer;
                     var parsedURL=getLocation(document.referrer);
-                    links[i].href=parsedURL.protocol+'://'+parsedURL.protocol ;
+                    console.log("setting returnlinks to"+parsedURL.protocol+'://'+parsedURL.host );links[i].href=parsedURL.protocol+'://'+parsedURL.host ;
                 }
                 
 }
