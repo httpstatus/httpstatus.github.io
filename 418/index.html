@@ -50,17 +50,30 @@ function getLocation(href) {
         hash: match[7]
     }
 }
-if(document.referrer != "" ) { 
+
+if( getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
+	console.log("not changing anything"); 
+	} else { 
+    var onerrorpage = false;
+    if(getLocation(document.location.toString()).pathname.match("/(4,5)*")) { console.log("no-error page called"); } else { onerrorpage=true ;console.log("error page called"); }
+    if(document.referrer != "" ) { 
                 console.log("found referrer: "+document.referrer);var links = document.getElementsByClassName("returnlink");
                 for(var i=0; i<links.length; i++)
                 {
                     //console.log(links[i].innerHTML);
                     //console.log(links[i].href);
-                    links[i].innerHTML="← Return to "+document.referrer;
+                if(onerrorpage) {
+                    links[i].innerHTML="← Return to "+parsedURL.protocol+'//'+parsedURL.host;
                     var parsedURL=getLocation(document.referrer);
                     console.log("setting returnlinks to "+parsedURL.protocol+'//'+parsedURL.host );links[i].href=parsedURL.protocol+'//'+parsedURL.host ;
+				   } else { 
+                    links[i].innerHTML="← Return to "+document.referrer;
+                    var parsedURL=getLocation(document.referrer);
+                    console.log("setting returnlinks to "+document.referrer );links[i].href=document.referrer ;
+				   }
                 }
                 
+       }
 }
 </script>
 </html>
