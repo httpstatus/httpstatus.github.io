@@ -71,8 +71,8 @@ if( getLocation(document.location.toString()).host  == getLocation(document.refe
                     //console.log(links[i].innerHTML);
                     //console.log(links[i].href);
                 if(onerrorpage) {
-                    links[i].innerHTML="← Return to "+parsedURL.protocol+'//'+parsedURL.host;
                     var parsedURL=getLocation(document.referrer);
+                    links[i].innerHTML="← Return to "+parsedURL.protocol+'//'+parsedURL.host;
                     console.log("setting returnlinks to "+parsedURL.protocol+'//'+parsedURL.host );links[i].href=parsedURL.protocol+'//'+parsedURL.host ;
 				   } else { 
                     links[i].innerHTML="← Return to "+document.referrer;
