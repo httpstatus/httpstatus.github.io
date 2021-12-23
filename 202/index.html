@@ -69,30 +69,31 @@ operation.</p>
   </body> <script type="application/javascript" >
 
 if( document.referrer.toString() != "" ) { 
+    console.log("found referrer: "+document.referrer);
 	if (getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
 	console.log("not changing anything"); 
 	} else { 
+    var links = document.getElementsByClassName("returnlink");
     var onerrorpage = false;
-    if(getLocation(document.location.toString()).pathname.match("/(4,5)*")) { onerrorpage=true ;console.log("error page called");} else { console.log("no-error page called");  }
-    if(document.referrer != "" ) { 
-                console.log("found referrer: "+document.referrer);var links = document.getElementsByClassName("returnlink");
-                var parsedURL=getLocation(document.referrer);
-                for(var i=0; i<links.length; i++)
-                {
-                    //console.log(links[i].innerHTML);
-                    //console.log(links[i].href);
-                if(onerrorpage) {
-                    links[i].innerHTML="← Return to "+parsedURL.protocol+'//'+parsedURL.host;
-                    console.log("setting returnlinks to "+parsedURL.protocol+'//'+parsedURL.host );links[i].href=parsedURL.protocol+'//'+parsedURL.host ;
-				   } else { 
-                    links[i].innerHTML="← Return to "+document.referrer;
+    if(getLocation(document.location.toString()).pathname.match("/(4,5)*")) { 
+		onerrorpage=true ;console.log("error page called");
+		} else { 
+		console.log("no-error page called");  }
 
-                    console.log("setting returnlinks to "+document.referrer );links[i].href=document.referrer ;
-				   }
-                }
-                
-       }
-   }
+        var parsedURL=getLocation(document.referrer);
+        for(var i=0; i<links.length; i++)
+        {
+            //console.log(links[i].innerHTML);
+            //console.log(links[i].href);
+            if(onerrorpage) {
+                  links[i].innerHTML="← Return to "+document.referrer;
+                  console.log("setting returnlinks to "+document.referrer );links[i].href=document.referrer ;
+		     } else { 
+                  links[i].innerHTML="← Return to "+parsedURL.protocol+'//'+parsedURL.host;
+                  console.log("setting returnlinks to "+parsedURL.protocol+'//'+parsedURL.host );links[i].href=parsedURL.protocol+'//'+parsedURL.host ;
+            }    
+        }
+    }
 }
 </script>
 </html>
