@@ -66,7 +66,8 @@ function getLocation(href) {
 <div></center>
   </body> <script type="application/javascript" >
 
-if( document.referrer.toString() != "" && getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
+if( document.referrer.toString() != "" ) { 
+	if (getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
 	console.log("not changing anything"); 
 	} else { 
     var onerrorpage = false;
@@ -89,6 +90,7 @@ if( document.referrer.toString() != "" && getLocation(document.location.toString
                 }
                 
        }
+   }
 }
 </script>
 </html>
