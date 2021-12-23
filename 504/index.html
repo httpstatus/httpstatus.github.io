@@ -68,17 +68,17 @@ if( getLocation(document.location.toString()).host  == getLocation(document.refe
     if(getLocation(document.location.toString()).pathname.match("/(4,5)*")) { console.log("no-error page called"); } else { onerrorpage=true ;console.log("error page called"); }
     if(document.referrer != "" ) { 
                 console.log("found referrer: "+document.referrer);var links = document.getElementsByClassName("returnlink");
+                var parsedURL=getLocation(document.referrer);
                 for(var i=0; i<links.length; i++)
                 {
                     //console.log(links[i].innerHTML);
                     //console.log(links[i].href);
                 if(onerrorpage) {
-                    var parsedURL=getLocation(document.referrer);
                     links[i].innerHTML="← Return to "+parsedURL.protocol+'//'+parsedURL.host;
                     console.log("setting returnlinks to "+parsedURL.protocol+'//'+parsedURL.host );links[i].href=parsedURL.protocol+'//'+parsedURL.host ;
 				   } else { 
                     links[i].innerHTML="← Return to "+document.referrer;
-                    var parsedURL=getLocation(document.referrer);
+
                     console.log("setting returnlinks to "+document.referrer );links[i].href=document.referrer ;
 				   }
                 }
