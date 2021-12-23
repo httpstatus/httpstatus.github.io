@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<script type="application/javascript" >
+function getLocation(href) {
+    var match = href.match(/^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);
+    return match && {
+        href: href,
+        protocol: match[1],
+        host: match[2],
+        hostname: match[3],
+        port: match[4],
+        pathname: match[5],
+        search: match[6],
+        hash: match[7]
+    }
+}
+</script>
+
     <title>300 Multiple Choices &mdash; httpstatus.github.io</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="description" content="HTTP Status Code 300: The target resource has more than one representation, each with its own more specific identifier, and information about the alternatives is being provided so that the user (or user agent) can select a preferred representation by redirecting its request to one or more of those identifiers.">
@@ -51,19 +67,6 @@
 <a href="https://the-foundation.gitlab.io/"><div><img src="https://hcxi2.2ix.ch/httpstatus.github.io/300/logo.jpg" width="480" height="270"/></div></a>
 <div></center>
   </body> <script type="application/javascript" >
-function getLocation(href) {
-    var match = href.match(/^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);
-    return match && {
-        href: href,
-        protocol: match[1],
-        host: match[2],
-        hostname: match[3],
-        port: match[4],
-        pathname: match[5],
-        search: match[6],
-        hash: match[7]
-    }
-}
 
 if( getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
 	console.log("not changing anything"); 

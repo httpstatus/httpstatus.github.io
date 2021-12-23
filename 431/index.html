@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+<script type="application/javascript" >
+function getLocation(href) {
+    var match = href.match(/^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);
+    return match && {
+        href: href,
+        protocol: match[1],
+        host: match[2],
+        hostname: match[3],
+        port: match[4],
+        pathname: match[5],
+        search: match[6],
+        hash: match[7]
+    }
+}
+</script>
+
     <title>431 Request Header Fields Too Large &mdash; httpstatus.github.io</title>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="description" content="HTTP Status Code 431: The server is unwilling to process the request because its header fields are too large. The request MAY be resubmitted after reducing the size of the request header fields.">
@@ -51,19 +67,6 @@ Content-Type: text/html
 <a href="https://the-foundation.gitlab.io/"><div><img src="https://hcxi2.2ix.ch/httpstatus.github.io/431/logo.jpg" width="480" height="270"/></div></a>
 <div></center>
   </body> <script type="application/javascript" >
-function getLocation(href) {
-    var match = href.match(/^(https?\:)\/\/(([^:\/?#]*)(?:\:([0-9]+))?)([\/]{0,1}[^?#]*)(\?[^#]*|)(#.*|)$/);
-    return match && {
-        href: href,
-        protocol: match[1],
-        host: match[2],
-        hostname: match[3],
-        port: match[4],
-        pathname: match[5],
-        search: match[6],
-        hash: match[7]
-    }
-}
 
 if( getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
 	console.log("not changing anything"); 
