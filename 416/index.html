@@ -69,7 +69,7 @@ Content-Range: bytes */47022
 <div></center>
   </body> <script type="application/javascript" >
 
-if( getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
+if( document.referrer.toString() != "" && getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
 	console.log("not changing anything"); 
 	} else { 
     var onerrorpage = false;

@@ -67,7 +67,7 @@ This service requires use of the HTTP/3.0 protocol.
 <div></center>
   </body> <script type="application/javascript" >
 
-if( getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
+if( document.referrer.toString() != "" && getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
 	console.log("not changing anything"); 
 	} else { 
     var onerrorpage = false;
