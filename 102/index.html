@@ -59,10 +59,12 @@ function getLocation(href) {
 <div></center>
   </body> <script type="application/javascript" >
 
-if( document.referrer.toString() != "" ) { 
+if( document.referrer.toString() == "" ) {
+	console.log("no referrer: ");
+	} else  { 
     console.log("found referrer: "+document.referrer);
 	if (getLocation(document.location.toString()).host  == getLocation(document.referrer.toString()).host  ) { 
-	console.log("not changing anything"); 
+	console.log(" referrer from same host - not changing anything"); 
 	} else { 
     var links = document.getElementsByClassName("returnlink");
     var onerrorpage = false;
