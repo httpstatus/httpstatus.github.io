@@ -63,7 +63,7 @@ if( document.referrer.toString() != "" && getLocation(document.location.toString
 	console.log("not changing anything"); 
 	} else { 
     var onerrorpage = false;
-    if(getLocation(document.location.toString()).pathname.match("/(4,5)*")) { console.log("no-error page called"); } else { onerrorpage=true ;console.log("error page called"); }
+    if(getLocation(document.location.toString()).pathname.match("/(4,5)*")) { onerrorpage=true ;console.log("error page called");} else { console.log("no-error page called");  }
     if(document.referrer != "" ) { 
                 console.log("found referrer: "+document.referrer);var links = document.getElementsByClassName("returnlink");
                 var parsedURL=getLocation(document.referrer);
