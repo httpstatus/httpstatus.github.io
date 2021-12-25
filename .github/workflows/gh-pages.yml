@@ -12,22 +12,13 @@ jobs:
           pwd
           mkdir build
           orig=$(pwd)/build
-#          cp -aurv * build/
           [[ -z "$(ls -1 |grep -v -e build -e README )" ]] || cp -rv $(ls -1 |grep -v -e build -e README ) $orig/
-
-          #rm -rf {1..5}* || true 
-          #cp ../httpstatus.gitlab.io/{1..5}* . ;
-
           git clone https://gitlab.com/httpstatus/httpstatus.gitlab.io.git /tmp/httpstatus.gitlab.io
           cd /tmp/httpstatus.gitlab.io; ls -1 |grep -v -e index.html -e README |  while read file;do test -e $orig/$file || cp -rv $file $orig/;done;echo copy done ; find $orig |sort ;ls -1 $orig/index.html 
           sed "s/httpstatus.gitlab.io/httpstatus.github.io/g" -i $(find $orig -type f)
-#          cp /tmp/httpstatus.gitlab.io/{1..5}* $orig/
-#          cp -rv $(ls -1 |grep -v README ) $orig/
           cd $orig
           for i in {1..5}*;do mv  $i $i.html;done;
           for i in {1..5}*.html;do mkdir ${i/.html/};mv $i ${i/.html/}/index.html;(cd ${i/.html/}/;ln -s  ../favicon.ico  . ) & done
-
-          #git add -A;git commit -m "INIT";git push
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.7
