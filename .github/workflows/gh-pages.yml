@@ -14,7 +14,7 @@ jobs:
           orig=$(pwd)/build
           [[ -z "$(ls -1 |grep -v -e build -e README )" ]] || cp -rv $(ls -1 |grep -v -e build -e README ) $orig/
           git clone https://gitlab.com/httpstatus/httpstatus.gitlab.io.git /tmp/httpstatus.gitlab.io
-          cd /tmp/httpstatus.gitlab.io; ls -1 |grep -v -e index.html -e README |  while read file;do test -e $orig/$file || cp -rv $file $orig/;done;echo copy done ; find $orig |sort ;ls -1 $orig/index.html 
+          cd /tmp/httpstatus.gitlab.io; ls -1 |grep -v  -e README |  while read file;do test -e $orig/$file || cp -rv $file $orig/;done;echo copy done ; find $orig |sort ;ls -1 $orig/index.html 
           sed "s/httpstatus.gitlab.io/httpstatus.github.io/g" -i $(find $orig -type f)
           cd $orig
           for i in {1..5}*;do mv  $i $i.html;done;
